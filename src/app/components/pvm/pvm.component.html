@@ -1,5 +1,35 @@
-<p>
-    <input type="number" [(ngModel)]="kaina"  >
-    Kaina: {{ kaina }} <br>
-    Kaina be PVM: {{ kaina / 1.21 }}
-</p>
+<div class="row mt-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                PVM skaičiuoklė
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="kaina" class="form-label">Kaina:</label>
+                    <input type="number" name="" id="kaina" class="form-control" [(ngModel)]="kaina">
+                </div>
+                <button class="btn btn-success">Skaičiuoti</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Rezultatai
+            </div>
+            <div class="card-body">
+                <div>
+                    Kaina be PVM: <b>{{ kaina }} </b> 
+                </div>
+                <div>
+                    PVM: <b>{{ kaina }} </b> 
+                </div>
+                <div>
+                    Galutinė kaina: <b>{{ kaina }} </b> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
