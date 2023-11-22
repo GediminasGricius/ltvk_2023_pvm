@@ -10,6 +10,18 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './pvm.component.css'
 })
 export class PvmComponent {
-  public kaina:number=100;
+  public kaina:number|null=null;
+  public bePVM:string="";
+  public pvm:string="";
+  public suma:string="";
+
+  public skaiciuoti(){
+    if (this.kaina!=null){
+      this.bePVM=(this.kaina / 1.21).toFixed(2)+" EUR";
+      this.pvm=(this.kaina - this.kaina / 1.21).toFixed(2)+" EUR";
+      this.suma=this.kaina.toFixed(2)+" EUR";
+     // this.kaina=null;
+    }
+  }
 
 }

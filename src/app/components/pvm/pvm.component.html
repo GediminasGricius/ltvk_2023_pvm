@@ -9,7 +9,7 @@
                     <label for="kaina" class="form-label">Kaina:</label>
                     <input type="number" name="" id="kaina" class="form-control" [(ngModel)]="kaina">
                 </div>
-                <button class="btn btn-success">Skaičiuoti</button>
+                <button class="btn btn-success" (click)="skaiciuoti()" [disabled]="kaina===null">Skaičiuoti</button>
             </div>
         </div>
     </div>
@@ -19,15 +19,22 @@
                 Rezultatai
             </div>
             <div class="card-body">
-                <div>
-                    Kaina be PVM: <b>{{ kaina }} </b> 
+                <div *ngIf=" bePVM!='' ">
+                    <div>
+                        Kaina be PVM: <b>{{ bePVM }} </b> 
+                    </div>
+                    <div>
+                        PVM: <b>{{ pvm }} </b> 
+                    </div>
+                    <div>
+                        Galutinė kaina: <b>{{ suma }} </b> 
+                    </div>
                 </div>
-                <div>
-                    PVM: <b>{{ kaina }} </b> 
+                <div *ngIf=" bePVM=='' ">
+                    Įveskite kainą ir paspauskite skaičiuoti
+
                 </div>
-                <div>
-                    Galutinė kaina: <b>{{ kaina }} </b> 
-                </div>
+                
             </div>
         </div>
     </div>
